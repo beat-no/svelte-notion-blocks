@@ -1,5 +1,5 @@
 {
-	"name": "svelte-notion-blocks",
+	"name": "@beat-no/svelte-notion-blocks",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
@@ -11,16 +11,22 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@notionhq/client": "^2.2.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@sveltejs/package": "next",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
+		"carbon-components-svelte": "^0.70.12",
+		"carbon-icons-svelte": "^11.4.0",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"html-entities": "^2.3.3",
+		"htmlparser": "^1.7.7",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"soupselect": "^0.2.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
