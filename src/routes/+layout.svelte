@@ -28,7 +28,7 @@
     export let data;
     const { blockTypes } = data;
 
-    let isSideNavOpen = true;
+    let isSideNavOpen = false;
 </script>
 
 <Header company="Notion blocks" platformName="for Svelte" href="/" bind:isSideNavOpen>
@@ -49,19 +49,19 @@
             <img src="/beat_logo.svg" width=24 height=24 alt="Beat Technology AS" />
         </HeaderGlobalAction>
     </HeaderUtilities>
-
-    <SideNav bind:isOpen={isSideNavOpen}>
-        <SideNavItems>
-            <SideNavLink icon={Home} href="/" text="Introduction" />
-            <SideNavLink icon={FaceSatisfied} href="/styling" text="Styling" />
-            <SideNavMenu icon={HorizontalView} href="/blocks" text="Blocks">
-                {#each blockTypes as { id, name }}
-                <SideNavLink icon={getBlockIcon(id)} href="/blocks/{id}" text="{name}" />
-                {/each}
-            </SideNavMenu>
-        </SideNavItems>
-    </SideNav>
 </Header>
+
+<SideNav bind:isOpen={isSideNavOpen}>
+    <SideNavItems>
+        <SideNavLink icon={Home} href="/" text="Introduction" />
+        <SideNavLink icon={FaceSatisfied} href="/styling" text="Styling" />
+        <SideNavMenu icon={HorizontalView} href="/blocks" text="Blocks">
+            {#each blockTypes as { id, name }}
+            <SideNavLink icon={getBlockIcon(id)} href="/blocks/{id}" text="{name}" />
+            {/each}
+        </SideNavMenu>
+    </SideNavItems>
+</SideNav>
 
 <Content>
 	<Grid>
