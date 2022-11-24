@@ -111,6 +111,7 @@ export async function listPages(
 
 export function agressiveCache(timeout: number) {
 	return {
+		credentials: 'omit',
 		headers: {
 			'cache-control': `public, max-age=${timeout}`
 		},
