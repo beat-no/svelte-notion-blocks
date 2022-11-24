@@ -19,6 +19,7 @@
 		"@sveltejs/package": "next",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
+		"@ungap/structured-clone": "^1.0.1",
 		"carbon-components-svelte": "^0.70.12",
 		"carbon-icons-svelte": "^11.4.0",
 		"eslint": "^8.16.0",

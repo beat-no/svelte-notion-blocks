@@ -6,6 +6,7 @@ import type {
 	QueryDatabaseParameters,
 	QueryDatabaseResponse
 } from '@notionhq/client/build/src/api-endpoints';
+import structuredClone from '@ungap/structured-clone';
 
 import { BookmarkProcessor } from '$lib/processors/bookmark';
 
