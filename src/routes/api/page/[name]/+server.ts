@@ -17,5 +17,5 @@ export async function GET({ params }) {
 
 	const page_id = map[name];
 	const response = await page(client, page_id);
-	return json(response, agressiveCache(3600));
+	return json(response, agressiveCache(60 * 5));
 }

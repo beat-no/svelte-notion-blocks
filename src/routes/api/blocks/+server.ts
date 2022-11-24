@@ -1,4 +1,4 @@
-import { listPages } from '$lib/server/helpers';
+import { listPages, agressiveCache } from '$lib/server/helpers';
 import { Client } from '@notionhq/client/build/src';
 import { json } from '@sveltejs/kit';
 import { BlockDatabase } from '../../databases.server';
@@ -12,5 +12,5 @@ export async function GET() {
         name: p.properties.Name.title.map(r => r.plain_text).join(' '),
         support: p.properties.Support.select
     }));
-    return json(blocks);
+    return json(blocks, agressiveCache(3600));
 }
