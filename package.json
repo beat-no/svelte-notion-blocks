@@ -9,7 +9,6 @@
 	},
 	"license": "MIT",
 	"repository": "github:beat-no/svelte-notion-blocks",
-	"private": "false",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
