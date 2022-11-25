@@ -1,4 +1,3 @@
-import { listPages, retrieveBlocks, pageFromSlug, page, agressiveCache } from './helpers';
 import Blocks from './blocks/Blocks.svelte';
 import Bookmark from './blocks/Bookmark.svelte';
 import BulletListItem from './blocks/BulletListItem.svelte';
@@ -27,11 +26,6 @@ import Toggle from './blocks/Toggle.svelte';
 import User from './blocks/User.svelte';
 
 export { 
-    listPages, 
-    retrieveBlocks, 
-    pageFromSlug,
-    page,
-    agressiveCache,
     Blocks,
     Bookmark,
     BulletListItem,
