@@ -1,6 +1,15 @@
 {
 	"name": "@beat-no/svelte-notion-blocks",
 	"version": "0.0.1",
+	"description": "Notion blocks for Svelte. Easily render Notion pages.",
+	"keywords": ["notion", "svelte", "sveltekit"],
+	"homepage": "https://github.com/beat-no/svelte-notion-blocks",
+	"bugs": {
+		"url" : "https://github.com/beat-no/svelte-notion-blocks/issues"
+	},
+	"license": "MIT",
+	"repository": "github:beat-no/svelte-notion-blocks",
+	"private": "false",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
