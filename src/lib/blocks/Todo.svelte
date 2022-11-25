@@ -10,7 +10,7 @@
 </script>
 
 <div class="todo {block.to_do.color}">
-    <input type="checkbox" readonly checked={block.to_do.checked} />
+    <input type="checkbox" disabled checked={block.to_do.checked} />
     <p><RichText {texts} /></p>
 
     <Children {block} />
