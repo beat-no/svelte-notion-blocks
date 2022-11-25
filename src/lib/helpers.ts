@@ -91,9 +91,11 @@ export async function page(
 	page_id: string,
 	get_nested_children = true
 ): Promise<CompletePage> {
-	const page = await client.pages.retrieve({ page_id });
-	const blocks = await retrieveBlocks(client, page.id, get_nested_children);
-	return { page, blocks };
+	const [page, blocks] = await Promise.all([
+		client.pages.retrieve({ page_id }),
+		retrieveBlocks(client, page_id, get_nested_children)
+	]);
+	return { page: <PageObjectResponse>page, blocks };
 }
 
 export async function listPages(
