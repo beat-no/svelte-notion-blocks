@@ -1,6 +1,6 @@
 {
 	"name": "@beat-no/svelte-notion-blocks",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Notion blocks for Svelte. Easily render Notion pages.",
 	"keywords": ["notion", "svelte", "sveltekit"],
 	"homepage": "https://github.com/beat-no/svelte-notion-blocks",
