@@ -1,36 +1,37 @@
-import { listPages, retrieveBlocks, pageFromSlug, page } from '$lib/server/helpers';
-import Blocks from '$lib/blocks/Blocks.svelte';
-import Bookmark from '$lib/blocks/Bookmark.svelte';
-import BulletListItem from '$lib/blocks/BulletListItem.svelte';
-import NumberedListItem from '$lib/blocks/NumberedListItem.svelte';
-import Callout from '$lib/blocks/Callout.svelte';
-import Caption from '$lib/blocks/Caption.svelte';
-import Children from '$lib/blocks/Children.svelte';
-import Code from '$lib/blocks/Code.svelte';
-import Column from '$lib/blocks/Column.svelte';
-import ColumnList from '$lib/blocks/ColumnList.svelte';
-import Debug from '$lib/blocks/Debug.svelte';
-import Divider from '$lib/blocks/Divider.svelte';
-import Heading1 from '$lib/blocks/Heading1.svelte';
-import Heading2 from '$lib/blocks/Heading2.svelte';
-import Heading3 from '$lib/blocks/Heading3.svelte';
-import Image from '$lib/blocks/Image.svelte';
-import Paragraph from '$lib/blocks/Paragraph.svelte';
-import Quote from '$lib/blocks/Quote.svelte';
-import RichText from '$lib/blocks/RichText.svelte';
-import RichTextFormat from '$lib/blocks/RichTextFormat.svelte';
-import Table from '$lib/blocks/Table.svelte';
-import TableCell from '$lib/blocks/TableCell.svelte';
-import TableRow from '$lib/blocks/TableRow.svelte';
-import Todo from '$lib/blocks/Todo.svelte';
-import Toggle from '$lib/blocks/Toggle.svelte';
-import User from '$lib/blocks/User.svelte';
+import { listPages, retrieveBlocks, pageFromSlug, page, agressiveCache } from './helpers';
+import Blocks from './blocks/Blocks.svelte';
+import Bookmark from './blocks/Bookmark.svelte';
+import BulletListItem from './blocks/BulletListItem.svelte';
+import NumberedListItem from './blocks/NumberedListItem.svelte';
+import Callout from './blocks/Callout.svelte';
+import Caption from './blocks/Caption.svelte';
+import Children from './blocks/Children.svelte';
+import Code from './blocks/Code.svelte';
+import Column from './blocks/Column.svelte';
+import ColumnList from './blocks/ColumnList.svelte';
+import Debug from './blocks/Debug.svelte';
+import Divider from './blocks/Divider.svelte';
+import Heading1 from './blocks/Heading1.svelte';
+import Heading2 from './blocks/Heading2.svelte';
+import Heading3 from './blocks/Heading3.svelte';
+import Image from './blocks/Image.svelte';
+import Paragraph from './blocks/Paragraph.svelte';
+import Quote from './blocks/Quote.svelte';
+import RichText from './blocks/RichText.svelte';
+import RichTextFormat from './blocks/RichTextFormat.svelte';
+import Table from './blocks/Table.svelte';
+import TableCell from './blocks/TableCell.svelte';
+import TableRow from './blocks/TableRow.svelte';
+import Todo from './blocks/Todo.svelte';
+import Toggle from './blocks/Toggle.svelte';
+import User from './blocks/User.svelte';
 
 export { 
     listPages, 
     retrieveBlocks, 
     pageFromSlug,
     page,
+    agressiveCache,
     Blocks,
     Bookmark,
     BulletListItem,

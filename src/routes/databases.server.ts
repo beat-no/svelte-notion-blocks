@@ -1,4 +1,4 @@
-import type { Database } from '$lib/server/helpers';
+import type { Database } from '$lib/helpers';
 
 export const BlockDatabase: Database = {
     slug_property: 'Type',

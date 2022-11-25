@@ -1,4 +1,4 @@
-import { page, agressiveCache } from '$lib/server/helpers';
+import { page, agressiveCache } from '$lib/helpers';
 import { Client } from '@notionhq/client/build/src';
 import { error, json } from '@sveltejs/kit';
 

@@ -2,7 +2,7 @@ import { select } from 'soupselect';
 import { Parser, DefaultHandler } from 'htmlparser';
 import { decode } from 'html-entities';
 import type { BookmarkBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import type { ExtendedBlockObjectResponse, Processor } from '$lib/server/helpers';
+import type { ExtendedBlockObjectResponse, Processor } from '$lib/helpers';
 
 function findTitle(dom: any): string | null {
 	const results = select(dom, 'title');

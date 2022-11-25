@@ -1,4 +1,4 @@
-import { listPages, agressiveCache } from '$lib/server/helpers';
+import { listPages, agressiveCache } from '$lib/helpers';
 import { Client } from '@notionhq/client/build/src';
 import { json } from '@sveltejs/kit';
 import { BlockDatabase } from '../../databases.server';
