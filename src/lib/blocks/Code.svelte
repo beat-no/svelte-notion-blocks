@@ -3,8 +3,12 @@
 	import Caption from "$lib/blocks/Caption.svelte";
 
     export let block: CodeBlockObjectResponse;
+
+    $: language = block?.code?.language
+        .replace("c#", "csharp")
+        .replace("c++", "cpp");
 </script>
 
 <Caption caption={block.code.caption}>
-    <pre class="code lang-{block.code.language}">{block.code.rich_text[0].plain_text}</pre>
+    <pre class="code lang-{language}">{block.code.rich_text[0].plain_text}</pre>
 </Caption>
