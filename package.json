@@ -15,283 +15,53 @@
 	"repository": "github:beat-no/svelte-notion-blocks",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "svelte-kit sync && svelte-package -o package",
-		"build:demo": "vite build",
-		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
+		"build": "vite build && npm run package",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/adapter-netlify": "^2.0.6",
-		"@sveltejs/kit": "^1.14.0",
-		"@sveltejs/package": "^2.0.0",
-		"@typescript-eslint/eslint-plugin": "^5.27.0",
-		"@typescript-eslint/parser": "^5.27.0",
-		"carbon-components-svelte": "^0.73.5",
-		"carbon-icons-svelte": "^11.4.0",
-		"eslint": "^8.16.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"prettier": "^2.6.2",
-		"prettier-plugin-svelte": "^2.7.0",
-		"svelte-check": "^3.1.4",
-		"svelte-preprocess": "^5.0.3",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.4",
-		"vite": "^4.0.0"
-	},
-	"dependencies": {
-		"@notionhq/client": "^2.2.2",
-		"@ungap/structured-clone": "^1.0.1",
-		"html-entities": "^2.3.3",
-		"htmlparser": "^1.7.7",
-		"soupselect": "^0.2.0",
-		"svelte": "^3.44.0"
-	},
-	"type": "module",
 	"exports": {
-		"./package.json": "./package.json",
-		"./blocks/Blocks.svelte": {
-			"types": "./package/blocks/Blocks.svelte.d.ts",
-			"svelte": "./package/blocks/Blocks.svelte",
-			"default": "./package/blocks/Blocks.svelte"
-		},
-		"./blocks/Bookmark.svelte": {
-			"types": "./package/blocks/Bookmark.svelte.d.ts",
-			"svelte": "./package/blocks/Bookmark.svelte",
-			"default": "./package/blocks/Bookmark.svelte"
-		},
-		"./blocks/BulletListItem.svelte": {
-			"types": "./package/blocks/BulletListItem.svelte.d.ts",
-			"svelte": "./package/blocks/BulletListItem.svelte",
-			"default": "./package/blocks/BulletListItem.svelte"
-		},
-		"./blocks/Callout.svelte": {
-			"types": "./package/blocks/Callout.svelte.d.ts",
-			"svelte": "./package/blocks/Callout.svelte",
-			"default": "./package/blocks/Callout.svelte"
-		},
-		"./blocks/Caption.svelte": {
-			"types": "./package/blocks/Caption.svelte.d.ts",
-			"svelte": "./package/blocks/Caption.svelte",
-			"default": "./package/blocks/Caption.svelte"
-		},
-		"./blocks/Children.svelte": {
-			"types": "./package/blocks/Children.svelte.d.ts",
-			"svelte": "./package/blocks/Children.svelte",
-			"default": "./package/blocks/Children.svelte"
-		},
-		"./blocks/Code.svelte": {
-			"types": "./package/blocks/Code.svelte.d.ts",
-			"svelte": "./package/blocks/Code.svelte",
-			"default": "./package/blocks/Code.svelte"
-		},
-		"./blocks/Column.svelte": {
-			"types": "./package/blocks/Column.svelte.d.ts",
-			"svelte": "./package/blocks/Column.svelte",
-			"default": "./package/blocks/Column.svelte"
-		},
-		"./blocks/ColumnList.svelte": {
-			"types": "./package/blocks/ColumnList.svelte.d.ts",
-			"svelte": "./package/blocks/ColumnList.svelte",
-			"default": "./package/blocks/ColumnList.svelte"
-		},
-		"./blocks/Debug.svelte": {
-			"types": "./package/blocks/Debug.svelte.d.ts",
-			"svelte": "./package/blocks/Debug.svelte",
-			"default": "./package/blocks/Debug.svelte"
-		},
-		"./blocks/Divider.svelte": {
-			"types": "./package/blocks/Divider.svelte.d.ts",
-			"svelte": "./package/blocks/Divider.svelte",
-			"default": "./package/blocks/Divider.svelte"
-		},
-		"./blocks/Heading1.svelte": {
-			"types": "./package/blocks/Heading1.svelte.d.ts",
-			"svelte": "./package/blocks/Heading1.svelte",
-			"default": "./package/blocks/Heading1.svelte"
-		},
-		"./blocks/Heading2.svelte": {
-			"types": "./package/blocks/Heading2.svelte.d.ts",
-			"svelte": "./package/blocks/Heading2.svelte",
-			"default": "./package/blocks/Heading2.svelte"
-		},
-		"./blocks/Heading3.svelte": {
-			"types": "./package/blocks/Heading3.svelte.d.ts",
-			"svelte": "./package/blocks/Heading3.svelte",
-			"default": "./package/blocks/Heading3.svelte"
-		},
-		"./blocks/Image.svelte": {
-			"types": "./package/blocks/Image.svelte.d.ts",
-			"svelte": "./package/blocks/Image.svelte",
-			"default": "./package/blocks/Image.svelte"
-		},
-		"./blocks/NumberedListItem.svelte": {
-			"types": "./package/blocks/NumberedListItem.svelte.d.ts",
-			"svelte": "./package/blocks/NumberedListItem.svelte",
-			"default": "./package/blocks/NumberedListItem.svelte"
-		},
-		"./blocks/Paragraph.svelte": {
-			"types": "./package/blocks/Paragraph.svelte.d.ts",
-			"svelte": "./package/blocks/Paragraph.svelte",
-			"default": "./package/blocks/Paragraph.svelte"
-		},
-		"./blocks/Quote.svelte": {
-			"types": "./package/blocks/Quote.svelte.d.ts",
-			"svelte": "./package/blocks/Quote.svelte",
-			"default": "./package/blocks/Quote.svelte"
-		},
-		"./blocks/RichText.svelte": {
-			"types": "./package/blocks/RichText.svelte.d.ts",
-			"svelte": "./package/blocks/RichText.svelte",
-			"default": "./package/blocks/RichText.svelte"
-		},
-		"./blocks/RichTextFormat.svelte": {
-			"types": "./package/blocks/RichTextFormat.svelte.d.ts",
-			"svelte": "./package/blocks/RichTextFormat.svelte",
-			"default": "./package/blocks/RichTextFormat.svelte"
-		},
-		"./blocks/Table.svelte": {
-			"types": "./package/blocks/Table.svelte.d.ts",
-			"svelte": "./package/blocks/Table.svelte",
-			"default": "./package/blocks/Table.svelte"
-		},
-		"./blocks/TableCell.svelte": {
-			"types": "./package/blocks/TableCell.svelte.d.ts",
-			"svelte": "./package/blocks/TableCell.svelte",
-			"default": "./package/blocks/TableCell.svelte"
-		},
-		"./blocks/TableRow.svelte": {
-			"types": "./package/blocks/TableRow.svelte.d.ts",
-			"svelte": "./package/blocks/TableRow.svelte",
-			"default": "./package/blocks/TableRow.svelte"
-		},
-		"./blocks/Todo.svelte": {
-			"types": "./package/blocks/Todo.svelte.d.ts",
-			"svelte": "./package/blocks/Todo.svelte",
-			"default": "./package/blocks/Todo.svelte"
-		},
-		"./blocks/Toggle.svelte": {
-			"types": "./package/blocks/Toggle.svelte.d.ts",
-			"svelte": "./package/blocks/Toggle.svelte",
-			"default": "./package/blocks/Toggle.svelte"
-		},
-		"./blocks/User.svelte": {
-			"types": "./package/blocks/User.svelte.d.ts",
-			"svelte": "./package/blocks/User.svelte",
-			"default": "./package/blocks/User.svelte"
-		},
 		".": {
-			"types": "./package/index.d.ts",
-			"svelte": "./package/index.js",
-			"default": "./package/index.js"
-		},
-		"./processors/bookmark": {
-			"types": "./package/processors/bookmark.d.ts",
-			"default": "./package/processors/bookmark.js"
-		},
-		"./server": {
-			"types": "./package/server/index.d.ts",
-			"svelte": "./package/server/index.js",
-			"default": "./package/server/index.js"
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
 		}
 	},
 	"files": [
-		"package"
+		"dist"
 	],
-	"svelte": "./package/index.js",
-	"typesVersions": {
-		">4.0": {
-			"blocks/Blocks.svelte": [
-				"./package/blocks/Blocks.svelte.d.ts"
-			],
-			"blocks/Bookmark.svelte": [
-				"./package/blocks/Bookmark.svelte.d.ts"
-			],
-			"blocks/BulletListItem.svelte": [
-				"./package/blocks/BulletListItem.svelte.d.ts"
-			],
-			"blocks/Callout.svelte": [
-				"./package/blocks/Callout.svelte.d.ts"
-			],
-			"blocks/Caption.svelte": [
-				"./package/blocks/Caption.svelte.d.ts"
-			],
-			"blocks/Children.svelte": [
-				"./package/blocks/Children.svelte.d.ts"
-			],
-			"blocks/Code.svelte": [
-				"./package/blocks/Code.svelte.d.ts"
-			],
-			"blocks/Column.svelte": [
-				"./package/blocks/Column.svelte.d.ts"
-			],
-			"blocks/ColumnList.svelte": [
-				"./package/blocks/ColumnList.svelte.d.ts"
-			],
-			"blocks/Debug.svelte": [
-				"./package/blocks/Debug.svelte.d.ts"
-			],
-			"blocks/Divider.svelte": [
-				"./package/blocks/Divider.svelte.d.ts"
-			],
-			"blocks/Heading1.svelte": [
-				"./package/blocks/Heading1.svelte.d.ts"
-			],
-			"blocks/Heading2.svelte": [
-				"./package/blocks/Heading2.svelte.d.ts"
-			],
-			"blocks/Heading3.svelte": [
-				"./package/blocks/Heading3.svelte.d.ts"
-			],
-			"blocks/Image.svelte": [
-				"./package/blocks/Image.svelte.d.ts"
-			],
-			"blocks/NumberedListItem.svelte": [
-				"./package/blocks/NumberedListItem.svelte.d.ts"
-			],
-			"blocks/Paragraph.svelte": [
-				"./package/blocks/Paragraph.svelte.d.ts"
-			],
-			"blocks/Quote.svelte": [
-				"./package/blocks/Quote.svelte.d.ts"
-			],
-			"blocks/RichText.svelte": [
-				"./package/blocks/RichText.svelte.d.ts"
-			],
-			"blocks/RichTextFormat.svelte": [
-				"./package/blocks/RichTextFormat.svelte.d.ts"
-			],
-			"blocks/Table.svelte": [
-				"./package/blocks/Table.svelte.d.ts"
-			],
-			"blocks/TableCell.svelte": [
-				"./package/blocks/TableCell.svelte.d.ts"
-			],
-			"blocks/TableRow.svelte": [
-				"./package/blocks/TableRow.svelte.d.ts"
-			],
-			"blocks/Todo.svelte": [
-				"./package/blocks/Todo.svelte.d.ts"
-			],
-			"blocks/Toggle.svelte": [
-				"./package/blocks/Toggle.svelte.d.ts"
-			],
-			"blocks/User.svelte": [
-				"./package/blocks/User.svelte.d.ts"
-			],
-			"index": [
-				"./package/index.d.ts"
-			],
-			"processors/bookmark": [
-				"./package/processors/bookmark.d.ts"
-			],
-			"server": [
-				"./package/server/index.d.ts"
-			]
-		}
-	}
+	"peerDependencies": {
+		"@notionhq/client": "^2.2.3",
+		"@ungap/structured-clone": "^1.0.2",
+		"html-entities": "^2.3.3",
+		"htmlparser": "^1.7.7",
+		"soupselect": "^0.2.0",
+		"svelte": "^3.54.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.5.0",
+		"@sveltejs/package": "^2.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"carbon-components-svelte": "^0.73.5",
+		"carbon-icons-svelte": "^11.4.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"publint": "^0.1.9",
+		"svelte": "^3.57.0",
+		"svelte-check": "^3.0.1",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.2.0"
+	},
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module"
 }
