@@ -27,7 +27,7 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-netlify": "^2.0.6",
 		"@sveltejs/kit": "^1.14.0",
-		"@sveltejs/package": "^2.0.2",
+		"@sveltejs/package": "^1.0.0-next.1",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"carbon-components-svelte": "^0.73.5",
@@ -44,18 +44,12 @@
 		"vite": "^4.0.0"
 	},
 	"dependencies": {
-		"svelte": "^3.44.0",
 		"@notionhq/client": "^2.2.2",
 		"@ungap/structured-clone": "^1.0.1",
 		"html-entities": "^2.3.3",
 		"htmlparser": "^1.7.7",
-		"soupselect": "^0.2.0"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
+		"soupselect": "^0.2.0",
+		"svelte": "^3.44.0"
 	},
 	"type": "module"
 }
