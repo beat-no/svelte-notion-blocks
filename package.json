@@ -2,10 +2,14 @@
 	"name": "@beat-no/svelte-notion-blocks",
 	"version": "0.0.12",
 	"description": "Notion blocks for Svelte. Easily render Notion pages.",
-	"keywords": ["notion", "svelte", "sveltekit"],
+	"keywords": [
+		"notion",
+		"svelte",
+		"sveltekit"
+	],
 	"homepage": "https://github.com/beat-no/svelte-notion-blocks",
 	"bugs": {
-		"url" : "https://github.com/beat-no/svelte-notion-blocks/issues"
+		"url": "https://github.com/beat-no/svelte-notion-blocks/issues"
 	},
 	"license": "MIT",
 	"repository": "github:beat-no/svelte-notion-blocks",
@@ -20,30 +24,38 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@notionhq/client": "^2.2.2",
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-cloudflare": "^1.0.0-next.40",
-		"@sveltejs/kit": "next",
-		"@sveltejs/package": "next",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-netlify": "^2.0.6",
+		"@sveltejs/kit": "^1.14.0",
+		"@sveltejs/package": "^2.0.2",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
-		"@ungap/structured-clone": "^1.0.1",
-		"carbon-components-svelte": "^0.70.12",
+		"carbon-components-svelte": "^0.73.5",
 		"carbon-icons-svelte": "^11.4.0",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"html-entities": "^2.3.3",
-		"htmlparser": "^1.7.7",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
-		"soupselect": "^0.2.0",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.7.1",
-		"svelte-preprocess": "^4.10.6",
+		"svelte-check": "^3.1.4",
+		"svelte-preprocess": "^5.0.3",
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
-		"vite": "^3.1.0"
+		"vite": "^4.0.0"
+	},
+	"dependencies": {
+		"svelte": "^3.44.0",
+		"@notionhq/client": "^2.2.2",
+		"@ungap/structured-clone": "^1.0.1",
+		"html-entities": "^2.3.3",
+		"htmlparser": "^1.7.7",
+		"soupselect": "^0.2.0"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
 	},
 	"type": "module"
 }
