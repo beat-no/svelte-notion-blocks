@@ -1,6 +1,6 @@
 {
 	"name": "@beat-no/svelte-notion-blocks",
-	"version": "0.0.17",
+	"version": "0.0.16",
 	"description": "Notion blocks for Svelte. Easily render Notion pages.",
 	"keywords": [
 		"notion",
@@ -28,6 +28,10 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./server": {
+			"types": "./dist/server/index.d.ts",
+			"svelte": "./dist/server/index.js"
 		}
 	},
 	"files": [
