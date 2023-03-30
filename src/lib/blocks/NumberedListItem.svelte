@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { NumberedListItemBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-    import RichText from "$lib/blocks/RichText.svelte";
+	import type { NumberedListItemBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+	import RichText from '$lib/blocks/RichText.svelte';
+	import Blocks from '$lib/blocks/Blocks.svelte';
 
-    export let block: NumberedListItemBlockObjectResponse;
-    export let number: number;
+	export let block: NumberedListItemBlockObjectResponse;
+	export let number: number;
 </script>
 
 <!--
@@ -19,5 +20,9 @@ block component.
 -->
 
 <ol>
-    <li value="{number}"><RichText texts={block.numbered_list_item.rich_text} /></li>
+	<li value={number}>
+		<RichText texts={block.numbered_list_item.rich_text} />{#if block.has_children}<Blocks
+				blocks={block.children}
+			/>{/if}
+	</li>
 </ol>

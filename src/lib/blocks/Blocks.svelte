@@ -48,7 +48,7 @@
 	function getPropsForBlock(block: BlockObjectResponse) {
 		const props: { [prop: string]: any } = {};
 
-		if (block.type === "numbered_list_item") {
+		if (block.type === 'numbered_list_item') {
 			const number = getItemNumberOfSameType(block);
 			if (!!number) {
 				props['number'] = number;
@@ -58,17 +58,18 @@
 		return props;
 	}
 
-	function getItemNumberOfSameType(block: BlockObjectResponse) {
+	function getItemNumberOfSameType(originalBlock: BlockObjectResponse) {
 		let count = 0;
-		const type = block.type;
-		for (let i = blocks.indexOf(block); i >= 0; i--) {
-			block = blocks[i];
-			if (block.type === type) {
+		for (let i = blocks.indexOf(originalBlock); i >= 0; i--) {
+			let block = blocks[i];
+			if (block.type === originalBlock.type) {
 				count++;
 			} else {
 				return count;
 			}
 		}
+
+		return count;
 	}
 </script>
 
