@@ -1,4 +1,4 @@
-import { page, agressiveCache } from '$lib/server';
+import { page, aggressiveCache } from '$lib/server';
 import { Client } from '@notionhq/client/build/src';
 import { error, json } from '@sveltejs/kit';
 
@@ -17,5 +17,5 @@ export async function GET({ params }) {
 
 	const page_id = map[name];
 	const response = await page(client, page_id);
-	return json(response, agressiveCache(60 * 5));
+	return json(response, aggressiveCache(60 * 5));
 }

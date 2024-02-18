@@ -111,7 +111,7 @@ export async function listPages(
 	return await client.databases.query(query);
 }
 
-export function agressiveCache(timeout: number) {
+export function aggressiveCache(timeout: number) {
 	return {
 		credentials: 'omit',
 		headers: {
