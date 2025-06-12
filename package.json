@@ -41,8 +41,7 @@
 		"@notionhq/client": "^2.2.3",
 		"@ungap/structured-clone": "^1.0.2",
 		"html-entities": "^2.3.3",
-		"htmlparser": "^1.7.7",
-		"soupselect": "^0.2.0",
+		"htmlparser2": "^9.1.0",
 		"svelte": "^3.54.0"
 	},
 	"devDependencies": {
